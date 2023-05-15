@@ -29,3 +29,8 @@ li {
 a {
   text-decoration: none;
 }
+
+.active {
+  text-decoration: underline;
+  color: blue;
+}

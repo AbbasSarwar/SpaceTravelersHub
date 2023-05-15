@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
 
 const Navbar = () => (
@@ -11,15 +11,15 @@ const Navbar = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/">Rockets</Link>
+          <NavLink to="/">Rockets</NavLink>
         </li>
         <li>
-          <Link to="/missions">Missions</Link>
+          <NavLink to="/missions">Missions</NavLink>
         </li>
         <li>
-          <Link to="/my-profile">My profile</Link>
+          <NavLink to="/my-profile">My profile</NavLink>
         </li>
-      </ul>
+        </ul>
     </nav>
   </header>
 );
