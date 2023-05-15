@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import planet from '../assets/planet.png';
 
 const Navbar = () => (
   <header>
-    <h1>Space Travelers&apos; Hub</h1>
+    <div>
+      <img src={planet} alt="logo" />
+      <h1>Space Travelers&apos; Hub</h1>
+    </div>
+    
     <nav>
       <ul>
         <li>

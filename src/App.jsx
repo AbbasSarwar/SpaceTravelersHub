@@ -4,7 +4,7 @@ import {
 import Rockets from './components/pages/Rockets';
 import Missions from './components/pages/Missions';
 import MyProfile from './components/pages/MyProfile';
-// import './styles/index';
+import './styles/index.css';
 
 const App = () => (
   <BrowserRouter>
