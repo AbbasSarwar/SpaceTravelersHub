@@ -32,4 +32,5 @@ a {
 
 .active {
   color: rgb(129, 129, 219);
+  text-decoration: underline;
 }
