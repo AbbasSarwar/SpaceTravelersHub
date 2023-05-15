@@ -1,9 +1,19 @@
-function App() {
-  return (
-    <>
-    <h1>First add Main Spacetraveler File here!</h1>
-    </>
-  )
-}
+import {
+  BrowserRouter, Routes, Route,
+} from 'react-router-dom';
+import Rockets from './components/pages/Rockets';
+import Missions from './components/pages/Missions';
+import MyProfile from './components/pages/MyProfile';
+// import './styles/index';
 
-export default App
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Rockets />} />
+      <Route path="/missions" element={<Missions />} />
+      <Route path="/my-profile" element={<MyProfile />} />
+    </Routes>
+  </BrowserRouter>
+);
+
+export default App;
