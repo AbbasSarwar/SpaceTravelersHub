@@ -1,6 +1,7 @@
 .reserve {
   background-color: rgb(255, 255, 255);
   color: #7a7676;
+  width: 12vw;
 }
 
 .unreserve {
