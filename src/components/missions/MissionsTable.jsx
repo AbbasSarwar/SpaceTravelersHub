@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { joinMission } from "../../redux/missions/missionsSlice";
+import styles from "../../styles/Missions.module.css";
 
 const MissionsTable = ({missions}) => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const MissionsTable = ({missions}) => {
             <td>{mission.mission_name}</td>
             <td>{mission.description}</td>
             <td><span className="status-badge">NOT A MEMBER</span></td>
-            <td><button className="join-btn" onClick={()=> dispatch(joinMission(mission.id))}>Join Mission</button></td>
+            <td><button className={`${!mission.reserved? styles.join: styles.leave}`} onClick={()=> dispatch(joinMission(mission.id))}>{!mission.reserved ? 'Join Mission': 'Leave Mission'}</button></td>
           </tr>
         ))}
       </tbody>
