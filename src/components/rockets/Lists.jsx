@@ -26,7 +26,7 @@ export const Lists = ()=>{
                 </div>
                 <div className='details'>
                   <h2>{rocket.rocket_name}</h2>
-                  <p>{rocket.description}</p>
+                  <p><span className={rocket.reserved? styles.badge: ''}>{rocket.reserved? "Reserved":''}</span>{rocket.description}</p>
                   <button className={`${rocket.reserved? styles.reserve: styles.unreserve}`} onClick={()=> Dispatch(reserveRocket(rocket.id))}>{rocket.reserved ? 'Cancel reservation': 'Reserve Rocket'}</button>
                 </div>
               </section>
