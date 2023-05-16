@@ -38,10 +38,3 @@ tbody tr:nth-child(odd) {
 .join-leave-mission {
   width: 12%;
 }
-
-.status-badge {
-  background-color: rgb(97, 97, 97);
-  color: white;
-  padding: 0.3rem;
-  font-size: 0.8rem;
-}
