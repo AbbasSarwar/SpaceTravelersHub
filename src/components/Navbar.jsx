@@ -19,7 +19,7 @@ const Navbar = () => (
         <li>
           <NavLink to="/my-profile">My profile</NavLink>
         </li>
-      </ul>
+        </ul>
     </nav>
   </header>
 );
