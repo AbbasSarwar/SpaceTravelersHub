@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MissionsTable from './MissionsTable';
-// import { missionsData } from '.../redux/missions/missionsSlice';
-import { missionsData } from '../../redux/missions/missionsSlice';
+import { missionsData } from '../../redux/missions/MissionsAPI';
 
 const MissionsLogic = () => {
   const { loading, missions, error } = useSelector((state) => state.missions);

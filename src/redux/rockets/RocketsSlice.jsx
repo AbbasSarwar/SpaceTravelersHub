@@ -7,8 +7,6 @@ const initialState = {
     error:null,
 };
 
-
-
 const Rocketslice = createSlice({
     name:"Rockets",
     initialState,

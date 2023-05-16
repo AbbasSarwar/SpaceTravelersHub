@@ -39,7 +39,15 @@ tbody tr:nth-child(odd) {
   width: 12%;
 }
 
-button {
+.join-btn {
+  color: black;
   cursor: pointer;
   padding: 0.5rem;
+}
+
+.status-badge {
+  background-color: rgb(97, 97, 97);
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.8rem;
 }
