@@ -1,7 +1,8 @@
 import { useEffect } from "react"
-import { FetchData } from "../../redux/rockets/RocketsSlice"
+import { reserveRocket } from "../../redux/rockets/RocketsSlice"
+import { FetchData } from "../../redux/rockets/API"
 import {useDispatch, useSelector} from 'react-redux'
-
+import styles from './rocket.module.css';
 export const Lists = ()=>{
     const {rockets, status, error} = useSelector((state)=> state.rockets)
     const Dispatch = useDispatch()
@@ -19,14 +20,14 @@ export const Lists = ()=>{
         <div className="topContainer">
         {
             rockets.map((rocket)=>{
-                return <section className='Space' key={rocket.rocket_id}>
+                return <section className='Space' key={rocket.id}>
                 <div className='img'>
                   <img src={rocket.rocket_flickr_images} alt="" />
                 </div>
                 <div className='details'>
                   <h2>{rocket.rocket_name}</h2>
                   <p>{rocket.description}</p>
-                  <button className="rocketbtn">Reserve Rocket</button>
+                  <button className={`${rocket.reserved? styles.reserve: styles.unreserve}`} onClick={()=> Dispatch(reserveRocket(rocket.id))}>{rocket.reserved ? 'Cancel reservation': 'Reserve Rocket'}</button>
                 </div>
               </section>
             })
