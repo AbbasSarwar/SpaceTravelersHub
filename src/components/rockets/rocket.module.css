@@ -24,9 +24,9 @@ button:hover {
 }
 
 .badge {
-    background-color: rgb(75, 181, 165);
-    color: #fff;
-    border-radius: 5px;
-    margin: 0 3px;
-    padding: 1px 3px;
-  }
+  background-color: rgb(75, 181, 165);
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 3px;
+  padding: 1px 3px;
+}
