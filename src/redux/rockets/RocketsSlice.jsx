@@ -1,5 +1,5 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import axios from 'axios';
+import {createSlice} from '@reduxjs/toolkit';
+import { FetchData } from './API';
 
 const initialState = {
     rockets: [],
@@ -7,26 +7,28 @@ const initialState = {
     error:null,
 };
 
-export const FetchData = createAsyncThunk('get/rockets', async ()=>{
-    const rockets = await axios.get('https://api.spacexdata.com/v4/rockets');
-    return rockets.data
-})
 
 
-export const Rocket = createSlice({
+const Rocketslice = createSlice({
     name:"Rockets",
     initialState,
+    reducers: {
+        reserveRocket: (state, { payload }) => {
+          const rockets = state.rockets.map((rocket) => {
+            if (rocket.id === payload) return { ...rocket, reserved: !rocket.reserved };
+            return rocket;
+          });
+          return { ...state, rockets };
+        },
+      },
     extraReducers(builder){
         builder
-        .addCase(FetchData.fulfilled, (state, { payload })=>{
-            state.status = false
-            const data = payload.map((rocket)=>({
-                rocket_id:rocket.id,
-                rocket_name: rocket.name,
-                description: rocket.description,
-                rocket_flickr_images: rocket.flickr_images[0]
-            }));
-            state.rockets = data;
-        })
-    }
+        .addCase(FetchData.fulfilled, (state, action)=>({
+            ...state,
+            rockets: action.payload,
+            status: false,
+        }))
+    },
 });
+export const { reserveRocket } = Rocketslice.actions;
+export default Rocketslice.reducer;
