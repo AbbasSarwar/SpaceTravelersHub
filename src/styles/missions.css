@@ -1,0 +1,45 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+th,
+td {
+  padding: 1rem;
+}
+
+td {
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(231, 231, 231);
+}
+
+.mission {
+  width: 10%;
+}
+
+.description {
+  width: 60%;
+}
+
+.status {
+  width: 12%;
+}
+
+.join-leave-mission {
+  width: 12%;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem;
+}
