@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
+import { missionsData } from './MissionsAPI';
 
 const initialState = {
   loading: false,
@@ -7,37 +7,34 @@ const initialState = {
   error: '',
 };
 
-export const missionsData = createAsyncThunk('get/fetchmissions', async () => {
-  try {
-    const response = await axios.get('https://api.spacexdata.com/v3/missions');
-    return response.data;
-  } catch (error) {
-    throw Error('Error fetching data from API');
-  }
-});
-
 export const missionsSlice = createSlice({
   name: 'missions',
   initialState,
+  reducers: {
+    joinMission: (state, { payload }) => {
+     const missions = state.missions.map((mission) => {
+        if (mission.id === payload) return { ...mission, reserved: true };
+        return mission;
+      });
+      return { ...state, missions };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(missionsData.pending, (state) => {
         state.loading = true;
       })
-      .addCase(missionsData.fulfilled, (state, { payload }) => {
+      .addCase(missionsData.fulfilled, (state, {payload}) => ({
+        ...state,
+        loading: false,
+        missions: payload,
+      }))
+      .addCase(missionsData.rejected, (state, {error}) => {
         state.loading = false;
-        const data = payload.map((mission)=>({
-          mission_id: mission.mission_id,
-          mission_name: mission.mission_name,
-          description: mission.description,
-      }));
-          state.missions = data;
-        })
-      .addCase(missionsData.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
+        state.error = error.message;
       });
   },
 });
 
+export const { joinMission } = missionsSlice.actions;
 export default missionsSlice.reducer;

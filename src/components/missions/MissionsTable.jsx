@@ -1,6 +1,9 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { joinMission } from "../../redux/missions/missionsSlice";
 
 const MissionsTable = ({missions}) => {
+  const dispatch = useDispatch();
   return ( 
     <table>
       <thead>
@@ -13,11 +16,11 @@ const MissionsTable = ({missions}) => {
       </thead>
       <tbody>
         {missions.map((mission) => (
-          <tr key={mission.mission_id}>
+          <tr key={mission.id}>
             <td>{mission.mission_name}</td>
             <td>{mission.description}</td>
-            <td><button>NOT A MEMBER</button></td>
-            <td><button>Join Mission</button></td>
+            <td><span className="status-badge">NOT A MEMBER</span></td>
+            <td><button className="join-btn" onClick={()=> dispatch(joinMission(mission.id))}>Join Mission</button></td>
           </tr>
         ))}
       </tbody>

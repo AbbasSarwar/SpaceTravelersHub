@@ -6,7 +6,6 @@ import styles from './rocket.module.css';
 export const Lists = ()=>{
     const {rockets, status, error} = useSelector((state)=> state.rockets)
     const Dispatch = useDispatch()
-    console.log(rockets)
     useEffect(()=>{
         Dispatch(FetchData())
     }, [Dispatch])
