@@ -1,6 +1,6 @@
 import Navbar from '../Navbar';
 import { Lists } from './Lists';
-import './rocket.css'
+import '../../styles/rockets/rocket.css';
 
 const Rockets = () => {
 

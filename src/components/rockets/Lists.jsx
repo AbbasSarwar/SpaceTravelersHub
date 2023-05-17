@@ -2,7 +2,8 @@ import { useEffect } from "react"
 import { reserveRocket } from "../../redux/rockets/RocketsSlice"
 import { FetchData } from "../../redux/rockets/API"
 import {useDispatch, useSelector} from 'react-redux'
-import styles from './rocket.module.css';
+import styles from "../../styles/rockets/rocket.module.css";
+
 export const Lists = ()=>{
     const {rockets, status, error} = useSelector((state)=> state.rockets)
     const Dispatch = useDispatch()

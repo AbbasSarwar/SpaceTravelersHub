@@ -1,6 +1,6 @@
 import Navbar from '../Navbar';
 import MissionsLogic from './MissionsLogic';
-import '../../styles/missions.css';
+import '../../styles/missions/missions.css';
 
 const Missions = () => (
   <>
