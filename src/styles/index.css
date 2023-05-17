@@ -11,6 +11,9 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
 }
 
 header > div {
@@ -40,7 +43,6 @@ a {
   flex-direction: row;
   width: 100%;
   padding: 0 10px;
-  border-top: 0.2px solid black;
 }
 
 .missions {
