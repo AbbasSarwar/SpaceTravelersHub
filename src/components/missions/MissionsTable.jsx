@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { joinMission } from "../../redux/missions/missionsSlice";
-import styles from "../../styles/MissionsTable.module.css";
+import styles from "../../styles/missions/MissionsTable.module.css";
 
 const MissionsTable = ({missions}) => {
   const dispatch = useDispatch();
