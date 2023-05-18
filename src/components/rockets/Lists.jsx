@@ -8,7 +8,7 @@ export const Lists = ()=>{
     const {rockets, status, error} = useSelector((state)=> state.rockets)
     const Dispatch = useDispatch()
     useEffect(()=>{
-        Dispatch(FetchData())
+        if(!rockets.length) Dispatch(FetchData());
     }, [Dispatch])
     if(status){
         return "...Loading"

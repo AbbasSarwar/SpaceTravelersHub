@@ -9,7 +9,7 @@ const MissionsLogic = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(missionsData());
+    if(!missions.length) dispatch(missionsData());
   }, [dispatch]);
 
   if (loading) {
