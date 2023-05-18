@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          class="mission"
+        >
+          Misssion
+        </th>
+        <th
+          class="description"
+        >
+          Description
+        </th>
+        <th
+          class="status"
+        >
+          Status
+        </th>
+        <th
+          class="join-leave-mission"
+        />
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Mission 1
+        </td>
+        <td>
+          Description 1
+        </td>
+        <td>
+          <span
+            class="active_member"
+          >
+            Active Member
+          </span>
+        </td>
+        <td>
+          <button
+            class="leave"
+          >
+            Leave Mission
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mission 2
+        </td>
+        <td>
+          Description 2
+        </td>
+        <td>
+          <span
+            class="status_badge"
+          >
+            NOT A MEMBER
+          </span>
+        </td>
+        <td>
+          <button
+            class="join"
+          >
+            Join Mission
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
