@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from '../Navbar';
 import { Lists } from './Lists';
 import '../../styles/rockets/rocket.css';

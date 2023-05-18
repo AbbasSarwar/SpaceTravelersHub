@@ -1,22 +1,17 @@
 import React from 'react';
+import { it, expect } from '@jest/globals';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { MissionsTable } from '../../components/missions/MissionsTable';
+import Rockets from '../../components/rockets/Rockets'
 import store from '../../redux/store';
-import { it, expect } from '@jest/globals';
 
 it('renders correctly', () => {
-  const missions = [
-    { id: 1, mission_name: 'Mission 1', description: 'Description 1', reserved: true },
-    { id: 2, mission_name: 'Mission 2', description: 'Description 2', reserved: false },
-    // Add more mission objects as needed
-  ];
 
   const { container } = render(
     <Provider store={store}>
       <BrowserRouter>
-        <MissionsTable missions={missions} />
+        <Rockets />
       </BrowserRouter>
     </Provider>
   );
