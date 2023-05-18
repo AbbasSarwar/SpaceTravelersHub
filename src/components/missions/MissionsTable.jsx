@@ -30,6 +30,8 @@ export const MissionsTable = ({missions}) => {
    );
 }
 
+export default MissionsTable;
+
 MissionsTable.propTypes = {
   missions: PropTypes.array.isRequired
 };
