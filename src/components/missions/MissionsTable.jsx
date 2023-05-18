@@ -1,9 +1,10 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { joinMission } from "../../redux/missions/missionsSlice";
 import styles from "../../styles/missions/MissionsTable.module.css";
 
-const MissionsTable = ({missions}) => {
+export const MissionsTable = ({missions}) => {
   const dispatch = useDispatch();
   return ( 
     <table>
@@ -29,9 +30,8 @@ const MissionsTable = ({missions}) => {
    );
 }
 
-MissionsTable.propTypes = {
-  missions: PropTypes.isRequired,
-};
-
- 
 export default MissionsTable;
+
+MissionsTable.propTypes = {
+  missions: PropTypes.array.isRequired
+};

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <header>
+    <div>
+      <img
+        alt="logo"
+        src="test-file-stub"
+      />
+      <h1>
+        Space Travelers' Hub
+      </h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            Rockets
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/missions"
+          >
+            Missions
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/my-profile"
+          >
+            My profile
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section
+    class="container"
+  >
+    <div
+      class="section1"
+    >
+      <h2>
+        My Missions
+      </h2>
+      <ul
+        class="missions"
+      />
+    </div>
+    <div
+      class="section2"
+    >
+      <h2>
+        My Rockets
+      </h2>
+      <ul
+        class="rockets"
+      />
+    </div>
+  </section>
+</div>
+`;
